@@ -2,7 +2,7 @@
 
 set -e
 
-echo "Setup dotfiles..."
+echo "Setup dependencies..."
 
 if [ "$(uname)" == "Darwin" ]; then
     echo "Installing dependencies for MacOS..."
@@ -17,9 +17,7 @@ if [ "$(uname)" == "Darwin" ]; then
     curl -s "https://get.sdkman.io" | bash
 
     echo "Setup dotfiles..."
-    ln -s $(pwd)/.zshrc ~/.zshrc
-    ln -s $(pwd)/.gitconfig ~/.gitconfig
-    ln -s $(pwd)/.config/nvim ~/.config/nvim
+    ./dotfiles.sh
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     echo "Installing dependencies for Linux..."
