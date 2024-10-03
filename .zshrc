@@ -159,7 +159,7 @@ bindkey "[D" backward-word
 bindkey "[C" forward-word
 
 # pnpm
-export PNPM_HOME="/Users/tnogueira/Library/pnpm"
+export PNPM_HOME="/$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -172,7 +172,7 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
-[[ -f /Users/tnogueira/.dart-cli-completion/zsh-config.zsh ]] && . /Users/tnogueira/.dart-cli-completion/zsh-config.zsh || true
+[[ -f /$HOME/.dart-cli-completion/zsh-config.zsh ]] && . /$HOME/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
