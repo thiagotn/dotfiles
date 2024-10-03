@@ -19,6 +19,7 @@ if [ "$(uname)" == "Darwin" ]; then
     echo "Setup dotfiles..."
     ln -s $(pwd)/.zshrc ~/.zshrc
     ln -s $(pwd)/.gitconfig ~/.gitconfig
+    ln -s $(pwd)/.config/nvim ~/.config/nvim
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     echo "Installing dependencies for Linux..."
