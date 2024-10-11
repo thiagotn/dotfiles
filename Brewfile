@@ -10,4 +10,8 @@ brew "ffmpeg"
 brew "playwright"
 brew "argocd"
 brew "fvm"
+brew "bat"
+brew "fzf"
+brew "fd"
 cask "iterm2"
+
