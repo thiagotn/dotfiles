@@ -13,5 +13,6 @@ brew "fvm"
 brew "bat"
 brew "fzf"
 brew "fd"
+brew "cocoapods"
 cask "iterm2"
 
