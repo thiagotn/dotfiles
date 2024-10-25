@@ -20,3 +20,9 @@ require("lazy").setup({ { import = "tnogueira.plugins" }, { import = "tnogueira.
 		notify = false,
 	},
 })
+
+-- Cria um autocmd para associar JenkinsfileHML ao Groovy
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = "JenkinsfileHML",
+	command = "set filetype=groovy",
+})

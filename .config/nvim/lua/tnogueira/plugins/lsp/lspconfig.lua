@@ -122,6 +122,8 @@ return {
 						"svelte",
 						"bash",
 						"dart",
+						"kotlin",
+						"java",
 					},
 				})
 			end,
@@ -148,6 +150,27 @@ return {
 					capabilities = capabilities,
 					cmd = { "dart", "language-server", "--protocol=lsp" },
 					filetypes = { "dart" },
+				})
+			end,
+			["kotlin_language_server"] = function()
+				-- configure kotlin server
+				lspconfig["kotlin_language_server"].setup({
+					capabilities = capabilities,
+					compiler = {
+						jvm = {
+							target = "1.8",
+						},
+					},
+					kotlin = {
+						classpath = {
+							"/Users/tnogueira/.sdkman/candidates/kotlin/current/lib/kotlin-stdlib.jar",
+						},
+						compiler = {
+							jvm = {
+								target = "1.8",
+							},
+						},
+					},
 				})
 			end,
 		})

@@ -39,6 +39,8 @@ return {
 				"pyright",
 				"yamlls",
 				"jsonls",
+				"jdtls",
+				"kotlin_language_server",
 			},
 		})
 
@@ -55,6 +57,7 @@ return {
 				"shfmt",
 				"markdownlint",
 				"jsonlint",
+				"ktlint",
 			},
 		})
 	end,
