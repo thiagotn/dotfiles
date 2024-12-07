@@ -78,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -158,6 +158,9 @@ export PATH="$HOME/.docker/bin:$PATH"
 bindkey "[D" backward-word
 bindkey "[C" forward-word
 
+bindkey "^[b" backward-word  # Option + ←
+bindkey "^[f" forward-word   # Option + →
+
 # pnpm
 export PNPM_HOME="/$HOME/Library/pnpm"
 case ":$PATH:" in
@@ -166,9 +169,17 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+eval "$(gh copilot alias -- zsh)"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 # add flutter stable from fvm to path
 export PATH="$HOME/fvm/versions/stable/bin:$PATH"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+export CURL_CA_BUNDLE="$HOME/Documents/Dev/Tools/zscaler-certs/Zscaler.pem"
+export SSL_CERT_FILE="$HOME/Documents/Dev/Tools/zscaler-certs/Zscaler.pem"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
@@ -178,5 +189,5 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-eval "$(gh copilot alias -- zsh)"
+
 
