@@ -8,6 +8,11 @@ if [ "$(uname)" == "Darwin" ]; then
     echo "Installing dependencies for MacOS..."
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    echo >> /Users/tnogueira/.zprofile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/tnogueira/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+
     brew bundle --file Brewfile
 
     echo "Setup nvm..."

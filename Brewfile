@@ -1,13 +1,14 @@
-tap "homebrew/cask-fonts"
+#tap "homebrew/cask-fonts" # failed
 tap "leoafarias/fvm"
 brew "kubectl"
-brew "font-meslo-lg-nerd-font"
+brew "font-meslo-lg-nerd-font" # failed
+# brew install --cask font-meslo-lg-nerd-font
 brew "neovim"
 brew "ripgrep"
 brew "jq"
 brew "gh"
 brew "ffmpeg"
-brew "playwright"
+brew "playwright"  # failed
 brew "argocd"
 brew "fvm"
 brew "bat"

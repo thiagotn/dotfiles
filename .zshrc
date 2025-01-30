@@ -145,7 +145,7 @@ load-nvmrc
 
 export PATH="/opt/homebrew/bin:$PATH"
 
-source ~/.kubeuolrc
+# source ~/.kubeuolrc
 
 source <(kubectl completion zsh)
 
@@ -175,11 +175,21 @@ eval "$(gh copilot alias -- zsh)"
 source <(fzf --zsh)
 
 # add flutter stable from fvm to path
-export PATH="$HOME/fvm/versions/stable/bin:$PATH"
+export PATH="$HOME/fvm/versions/3.27.0/bin:$PATH"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 export CURL_CA_BUNDLE="$HOME/Documents/Dev/Tools/zscaler-certs/Zscaler.pem"
 export SSL_CERT_FILE="$HOME/Documents/Dev/Tools/zscaler-certs/Zscaler.pem"
+export CERT_PATH="$HOME/Documents/Dev/Tools/zscaler-certs/Zscaler.pem"
+export CERT_DIR="$HOME/Documents/Dev/Tools/zscaler-certs"
+export SSL_CERT_FILE=${CERT_PATH} 
+export SSL_CERT_DIR=${CERT_DIR}
+export REQUESTS_CA_BUNDLE=${CERT_PATH}
+REQUESTS_CA_BUNDLE="$HOME/Documents/Dev/Tools/zscaler-certs/Zscaler.pem"
+
+alias saca="python3 ~/Documents/Dev/Tools/saca/saca.py"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
@@ -191,3 +201,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
