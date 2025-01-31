@@ -1,7 +1,6 @@
 tap "homebrew/cask-fonts"
 tap "leoafarias/fvm"
 brew "kubectl"
-brew "font-meslo-lg-nerd-font"
 brew "neovim"
 brew "ripgrep"
 brew "jq"
@@ -15,4 +14,6 @@ brew "fzf"
 brew "fd"
 brew "cocoapods"
 cask "iterm2"
+cask "font-meslo-lg-nerd-font"
+
 
