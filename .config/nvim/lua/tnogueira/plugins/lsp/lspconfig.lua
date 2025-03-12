@@ -121,7 +121,6 @@ return {
 						"less",
 						"svelte",
 						"bash",
-						"dart",
 						"kotlin",
 						"java",
 					},
@@ -144,14 +143,14 @@ return {
 					},
 				})
 			end,
-			["dartls"] = function()
-				-- configure dart server
-				lspconfig["dartls"].setup({
-					capabilities = capabilities,
-					cmd = { "dart", "language-server", "--protocol=lsp" },
-					filetypes = { "dart" },
-				})
-			end,
+			-- ["dart"] = function()
+			-- 	-- configure dart server
+			-- 	lspconfig["dart"].setup({
+			-- 		capabilities = capabilities,
+			-- 		cmd = { "fvm", "dart", "language-server", "--protocol=lsp" },
+			-- 		filetypes = { "dart" },
+			-- 	})
+			-- end,
 			["kotlin_language_server"] = function()
 				-- configure kotlin server
 				lspconfig["kotlin_language_server"].setup({
